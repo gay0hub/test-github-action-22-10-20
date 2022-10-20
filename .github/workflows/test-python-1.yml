@@ -40,6 +40,7 @@ jobs:
           echo ${{ github.ref }}
       - run: echo "$GITHUB_CONTEXT"
       - run: git config --list
+      - run: git config --list --show-origin
       - run: git config --get user.email
       # 把密码传给python 脚本
       - run: python py1.py 11 222 333 ${{ secrets.SECRET1 }} ${{ secrets.GITHUB_TOKEN }} "`git config --get user.email`"
