@@ -41,7 +41,7 @@ jobs:
       - run: echo "$GITHUB_CONTEXT"
       - run: git log -n 1 --pretty=format:%an    # username
       - run: git log -n 1 --pretty=format:%ae    # email
-      - run: echo <${{ github.actor }}>
+      - run: echo @${{ github.actor }}@
       - run: git config --list
       - run: git config --list --show-origin
 #      - run: git config --get user.email
