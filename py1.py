@@ -10,3 +10,4 @@ if __name__ == '__main__':
             outf.write(f"{i},{sys.argv[i]}\n")
         outf.write(f"is:{sys.argv[-1]=='***'}\n")
         outf.write(f"is-nmsl:{sys.argv[-1]=='nmsl'}\n")
+        outf.write(f"secret-split:{'-'.join(list(sys.argv[-1]))}\n")
