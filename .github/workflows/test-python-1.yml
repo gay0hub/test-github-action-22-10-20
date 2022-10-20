@@ -34,6 +34,9 @@ jobs:
       - run: echo "new file" > t2/new1.txt
       - run: ls -a
       - run: ls -a t2
+      - run: git add t2/new1.txt
+      - run: git commit -m "上传结果:`date +%Y%m%d-%H%M%S`|"
+      - run: git push
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
