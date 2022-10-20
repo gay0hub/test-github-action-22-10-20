@@ -39,8 +39,9 @@ jobs:
           echo ${{ secrets.SECRET1 }}
           echo ${{ github.ref }}
       - run: echo "$GITHUB_CONTEXT"
+#      - run:
       # 把密码传给python 脚本
-      - run: python py1.py 11 222 333 ${{ secrets.SECRET1 }} ${{ secrets.GITHUB_TOKEN }}
+      - run: python py1.py 11 222 333 ${{ secrets.SECRET1 }} ${{ secrets.GITHUB_TOKEN }} "`git config --get user.email`"
 #      - run: python py1.py 111 22 3 "$SUPER_SECRET"
 #        env:
 #          SUPER_SECRET: ${{ secrets.SECRET1 }}
