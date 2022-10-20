@@ -28,6 +28,12 @@ jobs:
       - run: echo "GITHUB_WORKSPACE:\n|${GITHUB_WORKSPACE}|"
       - run: pwd
       - run: ls -a
+      - run: rm -rf t1
+      - run: rm -rf t2
+      - run: mkdir t2
+      - run: echo "new file" > t2/new1.txt
+      - run: ls -a
+      - run: ls -a t2
 
       # Runs a single command using the runners shell
       - name: Run a one-line script
