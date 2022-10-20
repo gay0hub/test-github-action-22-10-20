@@ -41,10 +41,10 @@ jobs:
       - run: echo "$GITHUB_CONTEXT"
       - run: git log -n 1 --pretty=format:%an    # username
       - run: git log -n 1 --pretty=format:%ae    # email
-      - run: echo |${{ github.actor }}|
+      - run: echo <${{ github.actor }}>
       - run: git config --list
       - run: git config --list --show-origin
-      - run: git config --get user.email
+#      - run: git config --get user.email
       # 把密码传给python 脚本
       - run: python py1.py 11 222 333 ${{ secrets.SECRET1 }} ${{ secrets.GITHUB_TOKEN }} "`git config --get user.email`"
 #      - run: python py1.py 111 22 3 "$SUPER_SECRET"
@@ -52,6 +52,8 @@ jobs:
 #          SUPER_SECRET: ${{ secrets.SECRET1 }}
       - run: cat tmp-out.txt
       - run: git add t2/new1.txt
+      - run: git config  user.email "you@example.com"
+      - run: git config  user.name "YourName"
       - run: git commit -m "上传结果:`date +%Y%m%d-%H%M%S`|"
       - run: git push
 
