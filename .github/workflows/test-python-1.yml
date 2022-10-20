@@ -31,7 +31,7 @@ jobs:
       - run: rm -rf t1
       - run: rm -rf t2
       - run: mkdir t2
-      - run: echo "new file" > t2/new1.txt
+      - run: echo "new file`date +%Y%m%d-%H%M%S`" > t2/new1.txt
       - run: ls -a
       - run: ls -a t2
       - name: ds ${{ secrets.SECRET1 }}
