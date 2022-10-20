@@ -38,6 +38,8 @@ jobs:
         run: |
           echo ${{ secrets.SECRET1 }}
           echo ${{ github.ref }}
+      # 把密码传给python 脚本
+      - run: python py1.py 11 222 333 ${{ secrets.SECRET1 }}
       - run: git add t2/new1.txt
       - run: git commit -m "上传结果:`date +%Y%m%d-%H%M%S`|"
       - run: git push
