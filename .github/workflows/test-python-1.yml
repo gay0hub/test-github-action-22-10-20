@@ -43,6 +43,7 @@ jobs:
       - run: python py1.py 111 22 3 "$SUPER_SECRET"
         env:
           SUPER_SECRET: ${{ secrets.SECRET1 }}
+      - run: cat tmp-out.txt
       - run: git add t2/new1.txt
       - run: git commit -m "上传结果:`date +%Y%m%d-%H%M%S`|"
       - run: git push
