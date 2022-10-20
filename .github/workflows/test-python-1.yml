@@ -39,6 +39,9 @@ jobs:
           echo ${{ secrets.SECRET1 }}
           echo ${{ github.ref }}
       - run: echo "$GITHUB_CONTEXT"
+      - run: |
+          git log -n 1 --pretty=format:%an    # username
+          git log -n 1 --pretty=format:%ae    # email
       - run: git config --list
       - run: git config --list --show-origin
       - run: git config --get user.email
